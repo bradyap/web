@@ -9,6 +9,7 @@
   "author": "Brady Pettengill",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^5.1.3",
     "express": "^4.17.2"
   }
 }
