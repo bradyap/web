@@ -1,0 +1,15 @@
+#vscode
+**vscode
+
+#py
+**__pycache__
+**logs
+
+#node js
+**node_modules
+
+#auth
+/config.json
+
+#misc
+**cache
