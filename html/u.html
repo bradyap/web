@@ -21,7 +21,7 @@
         <script>
             function shortenUrl() {
                 const input = document.getElementById("input").value;
-                
+                                
                 axios.post('https://zepr.dev/a/u', {
                     url: input
                 })
@@ -29,6 +29,11 @@
                     console.log(response);
                     if (response.data.shortUrl) {
                         document.getElementById("output").innerHTML = "<br>" + response.data.shortUrl;
+                        navigator.clipboard.writeText(response.data.shortUrl).then(function() {
+                            console.log(document.getElementById("output").innerHTML += "<br>(Copied to clipboard)");
+                        }, function(err) {
+                            console.error('Async: could not copy to clipboard: ', err);
+                        });
                     } else {
                         document.getElementById("output").innerHTML = "<br>Error: " + response.data;
                     }
