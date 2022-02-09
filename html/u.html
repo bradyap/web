@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous" async></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        <title>/u</title>
+    </head>
+    <body style="text-align: center">
+        <h1><br>/u</h1>
+        <p>A basic URL shortener.<br><br><br><br><br></p>
+
+        <input type="text" placeholder="Enter a valid URL" id="input">
+        <button type="button" onclick="shortenUrl()">Shorten</button>
+        <p id ="output"><br>Your shortened URL will appear here.</p>
+        <script>
+            function shortenUrl() {
+                const input = document.getElementById("input").value;
+                
+                axios.post('https://zepr.dev/a/u', {
+                    url: input
+                })
+                .then(function (response) {
+                    console.log(response);
+                    if (response.data.shortUrl) {
+                        document.getElementById("output").innerHTML = "<br>" + response.data.shortUrl;
+                    } else {
+                        document.getElementById("output").innerHTML = "<br>Error: " + response.data;
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+                
+            }
+        </script>
+    </body>
+</html>
