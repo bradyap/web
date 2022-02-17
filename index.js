@@ -27,4 +27,13 @@ app.get('/:page', (req, res) => {
     }
 });
 
+app.get('/d/:file', (req, res) => {
+    let fpath = "./content/" + req.params.file;
+    if (fs.existsSync(fpath)) {
+        res.download(path.join(__dirname, fpath));
+    } else {
+        res.send("File not found.");
+    }
+})
+
 app.listen(3030, () => console.log("Listening on port 3030"));``
