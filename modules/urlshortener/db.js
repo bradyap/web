@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
-const dburl = require("../../config.json");
+const urldb = require("../../config.json");
 
-mongoose.connect(dburl.dburl, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(urldb.urldb, {useNewUrlParser: true, useUnifiedTopology: true});
 const db = mongoose.connection;
 
 module.exports = db;
