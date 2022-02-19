@@ -1,13 +1,13 @@
-const axios = require('axios').default;
+const axios = require('axios');
 
-const input = "hello"
-                
-                axios.post('https://zepr.dev/a/u', {
-                    url: input
-                })
-                .then(function (response) {
-                    alert(response);
-                })
-                .catch(function (error) {
-                    alert(error);
-                });
+axios.get('https://zepr.dev/a/p', {
+    data: {
+        id: "GQQFihyeh"
+    }
+})
+.then(function (response) {
+    console.log(response.data);
+})
+.catch(function (error) {
+    console.log(error);
+});
