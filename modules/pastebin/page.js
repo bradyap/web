@@ -58,10 +58,11 @@ function page(paste) {
                     resize: none;
                     `;
                     if (paste) {
-                        out += `height = ${paste.data.split('\n').length * 1.5} + 'em';"`;
+                        out += `height = ${paste.data.split('\n').length * 1.5} + 'em';`;
                     }
                     out += `
-                    oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
+                    "
+                    oninput='this.style.height = "";this.style.height = this.scrollHeight + "px";'
                     `;
                 if (paste) {
                     out += `id="input" autofocus="true" wrap="soft" class="form-control shadow-none" type="text" placeholder="type here" rows="${paste.data.split('\n').length}">${paste.data}</textarea></code>`; 

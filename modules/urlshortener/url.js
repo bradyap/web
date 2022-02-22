@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
                     origUrl: input,
                     shortUrl: shortUrl,
                     clicks: 0,
-                    date: Date.now()
+                    updated: Date.now()
                 })
 
                 await url.save()

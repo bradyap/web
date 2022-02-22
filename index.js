@@ -7,7 +7,8 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const db = require('./modules/urlshortener/db.js')
+const db = require('./db.js')
+
 db.once('open', () => console.log('Connection to MongoDB successful'))
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 

@@ -14,8 +14,8 @@ const urlSchema = new mongoose.Schema({
         type: Number,
         default: 0,
     },
-    date: {
-        type: String,
+    updated: {
+        type: Date,
         default: Date.now,
     },
 });
